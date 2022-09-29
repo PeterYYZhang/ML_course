@@ -15,4 +15,8 @@ def compute_subgradient_mae(y, tx, w):
     # INSERT YOUR CODE HERE
     # TODO: compute subgradient gradient vector for MAE
     # ***************************************************
-    raise NotImplementedError
+    N = y.shape[0]
+    error = y - tx.dot(w)
+    grad = np.zeros(w.shape)
+    grad = -tx.T @ np.sign(error) / N
+    return grad
