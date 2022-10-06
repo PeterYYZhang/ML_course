@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 """some helper functions."""
+import os.path
+
 import numpy as np
 
 
 def load_data(sub_sample=True, add_outlier=False):
     """Load data and convert it to the metric system."""
     path_dataset = "height_weight_genders.csv"
-    data = np.genfromtxt(
+    data = np.genfromtxt(# modified here
         path_dataset, delimiter=",", skip_header=1, usecols=[1, 2])
     height = data[:, 0]
     weight = data[:, 1]

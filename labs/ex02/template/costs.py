@@ -6,7 +6,7 @@ import numpy as np
 
 
 
-def compute_loss(y, tx, w):
+def compute_loss(y, tx, w, loss='MSE'):
     """Calculate the loss using either MSE or MAE.
 
     Args:
@@ -23,5 +23,9 @@ def compute_loss(y, tx, w):
     # ***************************************************
     N = y.shape[0]
     error = y - np.dot(tx, w)
-    loss = 1 / (2 * N) * np.dot(error.T, error)
-    return loss
+    if loss == 'MSE':
+        loss = 1 / (2 * N) * np.dot(error.T, error)
+        return loss
+    elif loss == 'MAE':
+        loss = 1/N * np.absolute(error)
+        return loss
