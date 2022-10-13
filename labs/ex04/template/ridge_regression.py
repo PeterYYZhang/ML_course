@@ -27,5 +27,8 @@ def ridge_regression(y, tx, lambda_):
     # COPY YOUR CODE FROM EX03 HERE
     # ridge regression: TODO
     # ***************************************************
-    raise NotImplementedError
+    N = y.shape[0]
+    w_optimum = np.dot(np.linalg.inv(tx.T @ tx + lambda_ * 2 * N * np.eye(tx.shape[1])), tx.T @ y)
+
+    return w_optimum
 
