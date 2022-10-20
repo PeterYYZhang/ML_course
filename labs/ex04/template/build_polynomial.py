@@ -17,17 +17,6 @@ def build_poly(x, degree):
     >>> build_poly(np.array([0.0, 1.5]), 2)
     array([[1.  , 0.  , 0.  ],
            [1.  , 1.5 , 2.25]])
-    """    
-    # ***************************************************
-    # COPY YOUR CODE FROM EX03 HERE
-    # polynomial basis function: TODO
-    # this function should return the matrix formed
-    # by applying the polynomial basis to the input data
-    # ***************************************************
-    # N = x.shape[0]
-    # x = np.reshape(x, (N, -1))
-    # poly = x ** 0
-    # for i in range(degree):
-    #     poly = np.hstack([poly, x ** (i + 1)])
+    """
     poly = np.power.outer(x, range(degree+1))
     return poly
