@@ -2,7 +2,7 @@ import doctest
 import io
 import sys
 import numpy as np
-
+from collections import defaultdict
 """
 This is a helper function that you can use to add simple unit tests
 to your exercise.
