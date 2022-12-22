@@ -1,0 +1,31 @@
+SOLVER:
+  SEG_LOSS_FUNC: "BoundaryCombo"
+  BCELOSS_WEIGHT: [1, 1]
+  WB_AND_D_WEIGHT: [1, 1]
+  WARMUP_FACTOR : 1.0
+  BATCH_SIZE: 6
+  LR: 1e-5
+  NORM_SR_OUTPUT : "instance"
+  MAX_ITER: 100000
+  SCE: True
+  SCE_WEIGHT: 0.9
+
+MODEL:
+  SCALE_FACTOR: 1
+  DETECTOR_TYPE: "u-net16"
+  UP_SAMPLE_METHOD: "pixel_shuffle"
+  OPTIMIZER: 'Adam'
+  JOINT_LEARNING: False
+  RECEPTIVE_ENLARGE: True
+  RE_METHOD: "dac"
+  RMP: True
+  RESIDUAL: False
+  GAMMA_HFE: 0.5
+
+DATASET:
+  TRAIN_IMAGE_DIR: 'ourdata/FRP/train_images'
+  TRAIN_MASK_DIR: 'ourdata/FRP/train_masks'
+  TEST_IMAGE_DIR: 'ourdata/FRP/test_images'
+  TEST_MASK_DIR: 'ourdata/FRP/test_masks'
+
+OUTPUT_DIR: 'output/model_exp/DAC_RMP_final'

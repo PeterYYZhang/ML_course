@@ -1,0 +1,29 @@
+SOLVER:
+  SEG_LOSS_FUNC: "BoundaryCombo"
+  BCELOSS_WEIGHT: [1, 1]
+  WB_AND_D_WEIGHT: [1, 1]
+  WARMUP_FACTOR : 1.0
+  BATCH_SIZE: 6
+  LR: 1e-5
+  NORM_SR_OUTPUT : "instance"
+  MAX_ITER: 40000
+  SCE: True
+  SCE_WEIGHT: 0.7
+
+MODEL:
+  SCALE_FACTOR: 1
+  DETECTOR_TYPE: "u-net16"
+  UP_SAMPLE_METHOD: "pixel_shuffle"
+  OPTIMIZER: 'Adam'
+  JOINT_LEARNING: False
+  RECEPTIVE_ENLARGE: False
+  RE_METHOD: "dac"
+  RMP: False
+
+DATASET:
+  TRAIN_IMAGE_DIR: 'datasets/FRP/train_image_mosaic'
+  TRAIN_MASK_DIR: 'datasets/FRP/train_mask_mosaic'
+  TEST_IMAGE_DIR: 'datasets/FRP/test_images'
+  TEST_MASK_DIR: 'datasets/FRP/test_masks'
+
+OUTPUT_DIR: 'output/sce_exp/07_mosaic'

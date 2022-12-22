@@ -1,0 +1,13 @@
+torch~=1.13.0
+numpy~=1.23.3
+opencv-python~=4.6.0.66
+torchvision~=0.14.0
+matplotlib~=3.6.2
+pillow~=9.2.0
+tqdm~=4.64.1
+requests~=2.28.1
+scipy~=1.9.3
+scikit-image~=0.19.3
+yacs~=0.1.8
+wandb~=0.13.5
+pandas~=1.5.1
